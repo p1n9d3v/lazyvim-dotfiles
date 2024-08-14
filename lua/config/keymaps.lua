@@ -57,11 +57,11 @@ keymap.set("n", "<S-h>", "v_", opts)
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
-  vim.diagnostic.go_next()
+  vim.diagnostic.goto_next()
 end, opts)
 
 keymap.set("n", "<C-J>", function()
-  vim.diagnostic.go_prev()
+  vim.diagnostic.goto_prev()
 end, opts)
 
 -- incRename
