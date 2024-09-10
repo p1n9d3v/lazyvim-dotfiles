@@ -48,5 +48,35 @@ return {
       completeopt = "menu,menuone,noselect,noinsert",
     }
     opts.mapping["<CR>"] = require("cmp").mapping.confirm({ select = false })
+    opts.window = {
+      completion = {
+        border = {
+          { "󱐋", "WarningMsg" },
+          { "─", "Comment" },
+          { "╮", "Comment" },
+          { "│", "Comment" },
+          { "╯", "Comment" },
+          { "─", "Comment" },
+          { "╰", "Comment" },
+          { "│", "Comment" },
+        },
+        scrollbar = false,
+        winblend = 0,
+      },
+      documentation = {
+        border = {
+          { "󰙎", "DiagnosticHint" },
+          { "─", "Comment" },
+          { "╮", "Comment" },
+          { "│", "Comment" },
+          { "╯", "Comment" },
+          { "─", "Comment" },
+          { "╰", "Comment" },
+          { "│", "Comment" },
+        },
+        scrollbar = false,
+        winblend = 0,
+      },
+    }
   end,
 }

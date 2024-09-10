@@ -1,7 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-
 local keymap = vim.keymap
 
 -- noremap is that if the key is  existed, keymapping do not be remapped.
@@ -10,7 +9,8 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- ESC --
-keymap.set("n", "<C-]>", ":")
+keymap.set("n", "<C-[>", ":", opts)
+keymap.set("n", "<C-]>", ":", opts)
 
 -- Increament and Decreament number
 
@@ -63,6 +63,3 @@ end, opts)
 keymap.set("n", "<C-J>", function()
   vim.diagnostic.goto_prev()
 end, opts)
-
--- incRename
-keymap.set("n", "<leader>rn", ":IncRename ")
