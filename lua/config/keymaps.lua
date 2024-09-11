@@ -9,7 +9,6 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- ESC --
-keymap.set("n", "<C-[>", ":", opts)
 keymap.set("n", "<C-]>", ":", opts)
 
 -- Increament and Decreament number
@@ -57,9 +56,12 @@ keymap.set("n", "<S-h>", "v_", opts)
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
-  vim.diagnostic.goto_next()
+    vim.diagnostic.goto_next()
 end, opts)
 
 keymap.set("n", "<C-J>", function()
-  vim.diagnostic.goto_prev()
+    vim.diagnostic.goto_prev()
 end, opts)
+
+-- keymap.del({ "i", "v" }, "<A-j>")
+-- keymap.del({ "i", "v" }, "<A-k>")
