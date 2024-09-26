@@ -30,6 +30,10 @@ return {
         opts = {
             servers = {
                 vtsls = {
+                    root_dir = function()
+                        local lazyvimRoot = require("lazyvim.util.root")
+                        return lazyvimRoot.git()
+                    end,
                     settings = {
                         typescript = {
                             preferences = {
