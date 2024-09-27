@@ -10,6 +10,32 @@ return {
     {
         "mfussenegger/nvim-dap",
         config = function()
+            if LazyVim.has("mason-nvim-dap.nvim") then
+                require("mason-nvim-dap").setup(LazyVim.opts("mason-nvim-dap.nvim"))
+            end
+
+            vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
+
+            for name, sign in pairs(LazyVim.config.icons.dap) do
+                sign = type(sign) == "table" and sign or { sign }
+                vim.fn.sign_define(
+                    "Dap" .. name,
+                    { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
+                )
+            end
+
+            -- setup dap config by VsCode launch.json file
+            local vscode = require("dap.ext.vscode")
+            local json = require("plenary.json")
+            vscode.json_decode = function(str)
+                return vim.json.decode(json.json_strip_comments(str))
+            end
+
+            -- Extends dap.configurations with entries read from .vscode/launch.json
+            if vim.fn.filereadable(".vscode/launch.json") then
+                vscode.load_launchjs()
+            end
+
             local dap = require("dap")
 
             for _, language in ipairs(based_languages) do
@@ -68,30 +94,12 @@ return {
                 }
             end
         end,
-        keys = {
-            {
-                "<leader>da",
-                function()
-                    if vim.fn.filereadable(".vscode/launch.json") then
-                        local dap_vscode = require("dap.ext.vscode")
-                        dap_vscode.load_launchjs(nil, {
-                            ["pwa-node"] = based_languages,
-                            ["chrome"] = based_languages,
-                            ["pwa-chrome"] = based_languages,
-                        })
-                    end
-                    require("dap").continue()
-                end,
-                desc = "Run with Args",
-            },
-        },
         dependencies = {
             -- Install the vscode-js-debug adapter
             {
                 "microsoft/vscode-js-debug",
-                -- After install, build it and rename the dist directory to out
-                build = "npm install --legacy-peer-deps --no-save && npx gulp vsDebugServerBundle && rm -rf out && mv dist out",
-                version = "1.*",
+                opt = true,
+                run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
             },
             {
                 "mxsdev/nvim-dap-vscode-js",
