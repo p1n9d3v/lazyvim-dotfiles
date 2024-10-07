@@ -12,6 +12,8 @@ return {
                     return {
                         LineNr = { fg = colors.blue, bg = "NONE", italic = true },
                         CursorLineNr = { fg = colors.pink, bg = "NONE", italic = true },
+                        CursorLine = { bg = colors.bgHighlight, fg = "NONE" },
+                        Visual = { bg = colors.blue, fg = colors.fg },
                     }
                 end,
             }

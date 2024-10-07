@@ -31,6 +31,12 @@ alias gcz="git cz -a"
 alias gcf="git commit --amend"
 alias gl="git log"
 
+
+# if installation pnpm , then npm is setted alias to pnpm
+if [ -x "$(command -v pnpm)" ]; then
+  alias npm=pnpm
+fi
+
 findandkill() {
   $(lsof -ti:3000 | xargs kill)
 }
