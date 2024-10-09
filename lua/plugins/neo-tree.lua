@@ -23,12 +23,12 @@ function restore_from_trash(state)
 
         vim.ui.input({
             prompt = "복원할 경로 입력: ",
-            default = vim.fn.getcwd(),
+            default = vim.fn.fnamemodify(state.tree:get_node().path, ":h"),
             completion = "dir", -- 경로 자동 완성 기능 활성화
         }, function(input_path)
-            if not input_path or input_path == "" then
-                print("경로가 입력되지 않아 기본 경로로 복원합니다.")
-                input_path = vim.fn.getcwd()
+            if not input_path then
+                print("복원할 경로 입력을 취소했습니다. 종료합니다.")
+                return
             end
 
             local filename = vim.fn.fnamemodify(source_path, ":t")
