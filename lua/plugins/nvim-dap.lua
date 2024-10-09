@@ -99,7 +99,7 @@ return {
             {
                 "microsoft/vscode-js-debug",
                 opt = true,
-                run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+                run = "pnpm install --shamefully-hoist && pnpm exec gulp vsDebugServerBundle && mv dist out",
             },
             {
                 "mxsdev/nvim-dap-vscode-js",
