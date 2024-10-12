@@ -10,6 +10,18 @@ return {
         },
         keys = {
             {
+                ";c",
+                function()
+                    local builtin = require("telescope.builtin")
+                    local current_dir = vim.fn.expand("%:p:h")
+                    builtin.find_files({
+                        cwd = current_dir,
+                        hidden = true,
+                    })
+                end,
+                desc = "Find files in current cursor directory",
+            },
+            {
                 "<leader>fP",
                 function()
                     require("telescope.builtin").find_files({

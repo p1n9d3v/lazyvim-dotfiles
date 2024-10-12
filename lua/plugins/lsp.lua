@@ -36,6 +36,9 @@ return {
                     end,
                     settings = {
                         typescript = {
+                            experimental = {
+                                useVsCodeWatcher = false,
+                            },
                             preferences = {
                                 importModuleSpecifier = "non-relative",
                             },

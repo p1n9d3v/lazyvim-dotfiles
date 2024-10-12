@@ -41,6 +41,10 @@ findandkill() {
   $(lsof -ti:3000 | xargs kill)
 }
 
+killTmuxAllSessions() {
+  $(tmux kill-session -a)
+}
+
 alias kill_port=findandkill
 
 source /Users/p1n9/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

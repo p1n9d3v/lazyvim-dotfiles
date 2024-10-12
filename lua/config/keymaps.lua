@@ -55,11 +55,11 @@ keymap.set("n", "<S-l>", "vg_", opts)
 keymap.set("n", "<S-h>", "v_", opts)
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
+keymap.set("n", "<C-q>", function()
     vim.diagnostic.goto_next()
 end, opts)
 
-keymap.set("n", "<C-J>", function()
+keymap.set("n", "<C-Q>", function()
     vim.diagnostic.goto_prev()
 end, opts)
 

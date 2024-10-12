@@ -36,6 +36,7 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.util.octo" },
         { import = "lazyvim.plugins.extras.editor.mini-move" },
         { import = "lazyvim.plugins.extras.editor.refactoring" },
+        { import = "lazyvim.plugins.extras.coding.luasnip" },
         { import = "plugins" },
     },
     defaults = {
