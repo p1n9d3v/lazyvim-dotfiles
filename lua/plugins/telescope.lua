@@ -10,13 +10,15 @@ return {
         },
         keys = {
             {
+                -- get files and direction for cursor position directory
                 ";c",
                 function()
                     local builtin = require("telescope.builtin")
+                    -- 현재 파일의 디렉토리를 가져오는 함수
                     local current_dir = vim.fn.expand("%:p:h")
                     builtin.find_files({
-                        cwd = current_dir,
-                        hidden = true,
+                        cwd = current_dir, -- 현재 커서 위치한 디렉토리 사용
+                        hidden = true, -- 숨겨진 파일 포함
                     })
                 end,
                 desc = "Find files in current cursor directory",
