@@ -14,6 +14,7 @@ return {
                         CursorLineNr = { fg = colors.pink, bg = "NONE", italic = true },
                         CursorLine = { bg = colors.bgHighlight, fg = "NONE" },
                         Visual = { bg = colors.blue, fg = colors.fg },
+                        FloatBorder = { fg = colors.cyan, bg = "NONE" },
                     }
                 end,
             }
