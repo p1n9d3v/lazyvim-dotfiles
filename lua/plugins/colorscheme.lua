@@ -15,6 +15,8 @@ return {
                         CursorLine = { bg = colors.bgHighlight, fg = "NONE" },
                         Visual = { bg = colors.blue, fg = colors.fg },
                         FloatBorder = { fg = colors.cyan, bg = "NONE" },
+                        NeoTreeFloatBorder = { fg = colors.pink, bg = "NONE" },
+                        NeoTreeTitleBar = { fg = colors.fg, bg = colors.pink },
                     }
                 end,
             }
