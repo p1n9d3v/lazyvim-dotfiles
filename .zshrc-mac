@@ -38,7 +38,8 @@ if [ -x "$(command -v pnpm)" ]; then
 fi
 
 findandkill() {
-  $(lsof -ti:3000 | xargs kill)
+  local port=$1
+  $(lsof -ti:$port | xargs kill)
 }
 
 killTmuxAllSessions() {
