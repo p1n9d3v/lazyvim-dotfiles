@@ -13,7 +13,8 @@
                       "^com\\.apple\\.Terminal$",
                       "^org\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$",
-                      "^info\\.pkpk\\.inkdrop$"
+                      "^info\\.pkpk\\.inkdrop$",
+                      "^com\\.github\\.wez\\.wezterm$"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -57,7 +58,8 @@
                       "^com\\.apple\\.Terminal$",
                       "^org\\.alacritty$",
                       "^com\\.googlecode\\.iterm2$",
-                      "^info\\.pkpk\\.inkdrop$"
+                      "^info\\.pkpk\\.inkdrop$",
+                      "^com\\.github\\.wez\\.wezterm$"
                     ],
                     "type": "frontmost_application_unless"
                   }
@@ -105,4 +107,3 @@
     }
   ]
 }
-
