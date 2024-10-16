@@ -280,7 +280,7 @@ local keys = {
    },
    -- resize panes
    {
-      key = 'p',
+      key = 'w',
       mods = 'LEADER',
       action = act.ActivateKeyTable({
          name = 'resize_pane',
@@ -288,6 +288,9 @@ local keys = {
          timemout_miliseconds = 1000,
       }),
    },
+   -- -- copy/paste --
+   { key = 'c', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
+   { key = 'v', mods = 'CTRL|SHIFT', action = act.PasteFrom('Clipboard') },
 }
 
 local key_tables = {
