@@ -1,10 +1,27 @@
-plugins=(tmux z git zsh-autosuggestions zsh-syntax-highlighting)
-export ZSH="$HOME/.oh-my-zsh"
-# MACOSX
-# export XDG_CONFIG_HOME=$HOME/.config
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-ZSH_THEME="headline"
-ZSH_TMUX_AUTOSTART=true
+plugins=(tmux z git  zsh-syntax-highlighting zsh-autosuggestions)
+export ZSH="$HOME/.oh-my-zsh"
+
+# MACOSX
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH=/opt/homebrew/bin:$PATH
+
+
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+    ZSH_TMUX_AUTOSTART=true
+elif [ -n "$WEZTERM_EXECUTABLE" ]; then
+    # WEZTERM
+    export WEZTERM_CONFIG_FILE="$HOME/.config/wezterm/wezterm.lua"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,21 +37,50 @@ alias gcz="git cz -a"
 alias gcf="git commit --amend"
 alias gl="git log"
 
+
+# if installation pnpm , then npm is setted alias to pnpm
+if [ -x "$(command -v pnpm)" ]; then
+  alias npm=pnpm
+fi
+
 findandkill() {
-  $(lsof -ti:3000 | xargs kill)
+  local port=$1
+  $(lsof -ti:$port | xargs kill)
+}
+
+killtmuxsessions() {
+  $(tmux kill-session -a)
+}
+
+movedotfiles() {
+    local dotfiles_path=~/Developments/dotfiles
+    $(cp ~/.zshrc $dotfiles_path/.zshrc)
+
+    if [ ! -d "$dotfiles_path/karabiner" ]; then
+        $(mkdir -p $dotfiles_path/karabiner)
+    fi
+    $(cp ~/.config/karabiner/karabiner.json $dotfiles_path/karabiner/karabiner.json)
+
+    if [ ! -d "$dotfiles_path/tmux" ]; then
+        $(mkdir -p $dotfiles_path/tmux)
+    fi
+    $(cp ~/.config/tmux/tmux.conf $dotfiles_path/tmux/tmux.conf)
+
+    $(cp -r ~/.config/nvim $dotfiles_path/)
+    
+    $(cp -r ~/.config/lazygit $dotfiles_path/)
+
+    $(cp -r ~/.config/aerospace $dotfiles_path/)
+
+    $(cp -r ~/.config/wezterm $dotfiles_path/)
+
+    $(cp -r ~/.config/sketchybar $dotfiles_path/)
 }
 
 alias kill_port=findandkill
 
+source $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-
-source /home/p1n9d3v/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/p1n9d3v/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# pnpm
-export PNPM_HOME="/home/p1n9d3v/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

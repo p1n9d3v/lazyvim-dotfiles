@@ -1,1 +1,6 @@
-tmux/plugins/
+# 모든 파일 무시
+nvim/*
+!nvim/lua/
+!nvim/stylua.toml
+
+
