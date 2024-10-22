@@ -4,6 +4,7 @@
 
 local wezterm = require('wezterm')
 local Cells = require('utils.cells')
+local colors = require('colors.custom')
 
 local nf = wezterm.nerdfonts
 local attr = Cells.attr
@@ -12,7 +13,7 @@ local attr = Cells.attr
 local GLYPH_LEFT_SIDE = nf.md_drag_vertical_variant --[[  ]]
 -- local GLYPH_SCIRCLE_RIGHT = nf.ple_right_half_circle_thick --[[  ]]
 local GLYPH_RIGHT_SIDE = nf.md_drag_vertical_variant --[[  ]]
-local GLYPH_CIRCLE = nf.fa_circle --[[  ]]
+local GLYPH_EXCALM = nf.fa_exclamation --[[ ]]
 local GLYPH_ADMIN = nf.md_shield_half_full --[[ 󰞀 ]]
 local GLYPH_LINUX = nf.cod_terminal_linux --[[  ]]
 local GLYPH_DEBUG = nf.fa_bug --[[  ]]
@@ -39,16 +40,16 @@ local RENDER_VARIANTS = {
 -- stylua: ignore
 local colors = {
    text_default          = { bg = '#45475A', fg = '#1C1B19' },
-   text_hover            = { bg = '#587D8C', fg = '#1C1B19' },
-   text_active           = { bg = '#7FB4CA', fg = '#11111B' },
+   text_hover            = { bg = colors.raw.pink, fg = '#1C1B19' },
+   text_active           = { bg = colors.raw.red, fg = '#11111B' },
 
    unseen_output_default = { bg = '#45475A', fg = '#FFA066' },
-   unseen_output_hover   = { bg = '#587D8C', fg = '#FFA066' },
-   unseen_output_active  = { bg = '#7FB4CA', fg = '#FFA066' },
+   unseen_output_hover   = { bg = colors.raw.pink, fg = '#FFA066' },
+   unseen_output_active  = { bg = colors.raw.red, fg = '#FFA066' },
 
    scircle_default       = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#45475A' },
-   scircle_hover         = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#587D8C' },
-   scircle_active        = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#7FB4CA' },
+   scircle_hover         = { bg = 'rgba(0, 0, 0, 0.4)', fg = colors.raw.pink },
+   scircle_active        = { bg = 'rgba(0, 0, 0, 0.4)', fg = colors.raw.red },
 }
 
 ---@param proc string
@@ -64,11 +65,12 @@ end
 local function create_title(process_name, base_title, max_width, inset)
    local title
 
-   if process_name:len() > 0 then
-      title = process_name .. ':' .. base_title
-   else
-      title = base_title
-   end
+   -- if process_name:len() > 0 then
+   --    title = process_name .. ':' .. base_title
+   -- else
+   --    title = base_title
+   -- end
+   title = base_title
 
    if base_title == 'Debug' then
       title = GLYPH_DEBUG .. ' DEBUG'
@@ -137,7 +139,7 @@ function Tab:set_cells()
       :add_segment('admin', ' ' .. GLYPH_ADMIN)
       :add_segment('wsl', ' ' .. GLYPH_LINUX)
       :add_segment('title', ' ', nil, attr(attr.intensity('Bold')))
-      :add_segment('unseen_output', ' ' .. GLYPH_CIRCLE)
+      :add_segment('unseen_output', ' ' .. GLYPH_EXCALM)
       :add_segment('padding', ' ')
       :add_segment('scircle_right', GLYPH_RIGHT_SIDE)
 end

@@ -36,6 +36,7 @@ alias gst="git status"
 alias gcz="git cz -a"
 alias gcf="git commit --amend"
 alias gl="git log"
+alias kill_port=findandkill
 
 
 # if installation pnpm , then npm is setted alias to pnpm
@@ -77,7 +78,6 @@ movedotfiles() {
     $(cp -r ~/.config/sketchybar $dotfiles_path/)
 }
 
-alias kill_port=findandkill
 
 source $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

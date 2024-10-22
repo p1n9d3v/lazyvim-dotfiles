@@ -29,6 +29,7 @@ local mocha = {
 }
 
 local colorscheme = {
+   raw = mocha,
    foreground = mocha.text,
    background = mocha.base,
    cursor_bg = mocha.rosewater,

@@ -1,6 +1,5 @@
 return {
     "hrsh7th/nvim-cmp",
-
     opts = function(_, opts)
         local has_words_before = function()
             unpack = unpack or table.unpack
@@ -62,6 +61,7 @@ return {
                 },
                 scrollbar = false,
                 winblend = 0,
+                winhighlight = "Normal:Normal",
             },
             documentation = {
                 border = {
@@ -77,6 +77,47 @@ return {
                 scrollbar = false,
                 winblend = 0,
             },
+            false,
+        }
+
+        -- TODO: 이모티콘 크기 동일시 해야함, 이모티콘 변경 필요
+        opts.formatting = {
+            fields = { "kind", "abbr", "menu" },
+            format = function(entry, vim_item)
+                local cmp_kinds = {
+                    Text = "  ",
+                    Method = "  ",
+                    Function = "  ",
+                    Constructor = "  ",
+                    Field = "  ",
+                    Variable = "  ",
+                    Class = "  ",
+                    Interface = "  ",
+                    Module = "  ",
+                    Property = "  ",
+                    Unit = "  ",
+                    Value = "  ",
+                    Enum = "  ",
+                    Keyword = "  ",
+                    Snippet = "  ",
+                    Color = "  ",
+                    File = "  ",
+                    Reference = "  ",
+                    Folder = "  ",
+                    EnumMember = "  ",
+                    Constant = "  ",
+                    Struct = "  ",
+                    Event = "  ",
+                    Operator = "  ",
+                    TypeParameter = "  ",
+                    Copilot = "  ",
+                }
+                local prevKind = vim_item.kind
+                vim_item.kind = (cmp_kinds[prevKind] or "") .. prevKind .. " "
+                vim_item.menu = " (" .. (entry.source.name or "undefined") .. ")"
+
+                return vim_item
+            end,
         }
     end,
 }
