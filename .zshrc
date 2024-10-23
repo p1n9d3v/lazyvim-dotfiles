@@ -5,13 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-plugins=(tmux z git  zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(tmux z git  zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode)
 export ZSH="$HOME/.oh-my-zsh"
 
 # MACOSX
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH=/opt/homebrew/bin:$PATH
 
+# OH-MY-ZSH
+export OH_MY_ZSH=$HOME/.oh-my-zsh
 
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -37,6 +39,7 @@ alias gcz="git cz -a"
 alias gcf="git commit --amend"
 alias gl="git log"
 alias kill_port=findandkill
+alias cdh="cd ~"
 
 
 # if installation pnpm , then npm is setted alias to pnpm
@@ -84,3 +87,13 @@ source $HOME/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# vi-zsh-mode
+bindkey -M vicmd '^H' beginning-of-line  
+bindkey -M vicmd '^L' end-of-line       
+
+bindkey -M visual '^H' beginning-of-line
+bindkey -M visual '^L' end-of-line
+
+bindkey -M viins '^H' beginning-of-line
+bindkey -M viins '^L' end-of-line
