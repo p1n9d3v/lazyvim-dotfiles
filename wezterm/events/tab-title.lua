@@ -4,7 +4,6 @@
 
 local wezterm = require('wezterm')
 local Cells = require('utils.cells')
-local colors = require('colors.custom')
 
 local nf = wezterm.nerdfonts
 local attr = Cells.attr
@@ -40,16 +39,16 @@ local RENDER_VARIANTS = {
 -- stylua: ignore
 local colors = {
    text_default          = { bg = '#45475A', fg = '#1C1B19' },
-   text_hover            = { bg = colors.raw.pink, fg = '#1C1B19' },
-   text_active           = { bg = colors.raw.red, fg = '#11111B' },
+   text_hover            = { bg = '#f5c2e7', fg = '#1C1B19' },
+   text_active           = { bg = '#f38ba8', fg = '#11111B' },
 
    unseen_output_default = { bg = '#45475A', fg = '#FFA066' },
-   unseen_output_hover   = { bg = colors.raw.pink, fg = '#FFA066' },
-   unseen_output_active  = { bg = colors.raw.red, fg = '#FFA066' },
+   unseen_output_hover   = { bg = '#f5c2e7', fg = '#FFA066' },
+   unseen_output_active  = { bg = '#f38ba8', fg = '#FFA066' },
 
    scircle_default       = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#45475A' },
-   scircle_hover         = { bg = 'rgba(0, 0, 0, 0.4)', fg = colors.raw.pink },
-   scircle_active        = { bg = 'rgba(0, 0, 0, 0.4)', fg = colors.raw.red },
+   scircle_hover         = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#f5c2e7' },
+   scircle_active        = { bg = 'rgba(0, 0, 0, 0.4)', fg = '#f38ba8' },
 }
 
 ---@param proc string
