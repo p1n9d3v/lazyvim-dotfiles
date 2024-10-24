@@ -1,5 +1,11 @@
 return {
     -- {
+    --     "rebelot/kanagawa.nvim", -- neorg needs a colorscheme with treesitter support
+    --     opts = {
+    --         transparent = true,
+    --     },
+    -- },
+    -- {
     --     "scottmckendry/cyberdream.nvim",
     --     lazy = false,
     --     priority = 1000,

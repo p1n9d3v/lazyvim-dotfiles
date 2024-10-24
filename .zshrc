@@ -7,6 +7,7 @@ fi
 
 plugins=(tmux z git  zsh-syntax-highlighting zsh-autosuggestions zsh-vi-mode)
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh"
 
 # MACOSX
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -15,6 +16,8 @@ export PATH=/opt/homebrew/bin:$PATH
 # OH-MY-ZSH
 export OH_MY_ZSH=$HOME/.oh-my-zsh
 
+# C Compiler for neorg
+export CC=/opt/homebrew/bin/gcc-14
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 

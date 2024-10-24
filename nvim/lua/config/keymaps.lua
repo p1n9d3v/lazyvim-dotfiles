@@ -2,7 +2,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- ESC --
-keymap.set("n", "<C-]>", ":", opts)
+vim.keymap.set("n", "<C-]>", function()
+    vim.fn.feedkeys(":", "n") -- ':' 명령어 입력을 시뮬레이션
+end, opts)
 
 -- Increament and Decreament number
 

@@ -1,185 +1,184 @@
 {
-  "profiles": [
-    {
-      "complex_modifications": {
-        "rules": [
-          {
-            "description": "Change Command + i/j/k/l to Arrows",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "left_arrow" }],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "down_arrow" }],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "i",
-                  "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "up_arrow" }],
-                "type": "basic"
-              },
-              {
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "right_arrow" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Left ctrl + hjkl to arrow keys Vim",
-            "enabled": false,
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^com\\.apple\\.Terminal$",
-                      "^org\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$",
-                      "^info\\.pkpk\\.inkdrop$",
-                      "^com\\.github\\.wez\\.wezterm$"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "mandatory": ["left_control"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "left_arrow" }],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^com\\.apple\\.Terminal$",
-                      "^org\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$",
-                      "^info\\.pkpk\\.inkdrop$",
-                      "^com\\.github\\.wez\\.wezterm$"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "mandatory": ["left_control"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "down_arrow" }],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^com\\.apple\\.Terminal$",
-                      "^org\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$",
-                      "^info\\.pkpk\\.inkdrop$",
-                      "^com\\.github\\.wez\\.wezterm$"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "mandatory": ["left_control"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "up_arrow" }],
-                "type": "basic"
-              },
-              {
-                "conditions": [
-                  {
-                    "bundle_identifiers": [
-                      "^com\\.apple\\.Terminal$",
-                      "^org\\.alacritty$",
-                      "^com\\.googlecode\\.iterm2$",
-                      "^info\\.pkpk\\.inkdrop$",
-                      "^com\\.github\\.wez\\.wezterm$"
-                    ],
-                    "type": "frontmost_application_unless"
-                  }
-                ],
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "mandatory": ["left_control"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [{ "key_code": "right_arrow" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Map Shift + Space to Shift + Ctrl + Space",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "spacebar",
-                  "modifiers": { "mandatory": ["left_shift"] }
-                },
-                "to": [
-                  {
-                    "key_code": "spacebar",
-                    "modifiers": ["left_shift", "left_control"]
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          }
-        ]
-      },
-      "name": "Default profile",
-      "selected": true,
-      "simple_modifications": [
+    "profiles": [
         {
-          "from": { "key_code": "caps_lock" },
-          "to": [{ "key_code": "left_control" }]
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Change Command + i/j/k/l to Arrows",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "left_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Left ctrl + hjkl to arrow keys Vim",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^info\\.pkpk\\.inkdrop$",
+                                            "^com\\.github\\.wez\\.wezterm$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "left_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^info\\.pkpk\\.inkdrop$",
+                                            "^com\\.github\\.wez\\.wezterm$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^info\\.pkpk\\.inkdrop$",
+                                            "^com\\.github\\.wez\\.wezterm$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^org\\.alacritty$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^info\\.pkpk\\.inkdrop$",
+                                            "^com\\.github\\.wez\\.wezterm$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Map Shift + Space to Shift + Ctrl + Space",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": { "mandatory": ["left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_shift", "left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "caps_lock" },
+                    "to": [{ "key_code": "left_control" }]
+                }
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
-      ],
-      "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-    }
-  ]
+    ]
 }
-
