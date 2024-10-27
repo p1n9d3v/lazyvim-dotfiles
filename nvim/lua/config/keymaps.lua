@@ -69,3 +69,8 @@ end, {
 -- Multi Cursor
 keymap.set("n", "<C-j>", "<Plug>(VM-Add-Cursor-Down)", opts)
 keymap.set("n", "<C-k>", "<Plug>(VM-Add-Cursor-Up)", opts)
+
+-- Local Leader --
+vim.g.maplocalleader = ","
+
+vim.keymap.set("n", "<LocalLeader>nn", "<Plug>(neorg.dirman.new-note)", opts)

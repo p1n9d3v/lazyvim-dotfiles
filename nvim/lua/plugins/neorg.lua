@@ -14,6 +14,14 @@ return {
                         default_workspace = "notes",
                     },
                 },
+                ["core.completion"] = { -- 자동 완성 설정
+                    config = { engine = "nvim-cmp", name = "[Norg]" },
+                },
+                ["core.keybinds"] = {
+                    config = {
+                        default_keybinds = true,
+                    },
+                },
             },
         },
     },

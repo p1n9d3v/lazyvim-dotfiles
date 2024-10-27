@@ -1,8 +1,10 @@
 return {
     -- {
     --     "rebelot/kanagawa.nvim", -- neorg needs a colorscheme with treesitter support
+    --     priority = 1000,
     --     opts = {
-    --         transparent = true,
+    --         compile = true,
+    --         -- transparent = true,
     --     },
     -- },
     -- {
@@ -76,6 +78,7 @@ return {
         "LazyVim/LazyVim",
         opts = {
             colorscheme = "catppuccin-mocha",
+            -- colorscheme = "kanagawa",
         },
     },
     -- modicator (auto color line number based on vim mode)
