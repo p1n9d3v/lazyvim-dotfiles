@@ -45,6 +45,9 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 keymap.set("n", "<C-h>", "^", opts)
 keymap.set("n", "<C-l>", "$", opts)
 
+keymap.set("v", "<C-h>", "^", opts)
+keymap.set("v", "<C-l>", "$", opts)
+
 -- Visual Line
 keymap.set("n", "<S-l>", "vg_", opts)
 keymap.set("n", "<S-h>", "v_", opts)
