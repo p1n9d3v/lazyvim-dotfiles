@@ -11,6 +11,7 @@ return {
           CursorLineNr = { fg = C.red, bg = "NONE" },
         }
       end,
+      integrations = { blink_cmp = true },
     },
   },
   {

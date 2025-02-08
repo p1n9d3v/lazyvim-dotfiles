@@ -1,27 +1,34 @@
+local languages = {
+  "typescript",
+  "javascript",
+  "typescriptreact",
+  "javascriptreact",
+}
+
 return {
+  "mfussenegger/nvim-dap",
+  keys = {
     {
-        "mfussenegger/nvim-dap",
-        keys = {
-            {
-                "<leader>dO",
-                function()
-                    require("dap").step_out()
-                end,
-                desc = "Step Out",
-            },
-            {
-                "<leader>do",
-                function()
-                    require("dap").step_over()
-                end,
-                desc = "Step Over",
-            },
-        },
+      "<leader>do",
+      function()
+        require("dap").step_over()
+      end,
+      desc = "Step Over",
     },
     {
-        "theHamsta/nvim-dap-virtual-text",
-        opts = {
-            virt_text_win_col = 80,
-        },
+      "<leader>dO",
+      function()
+        require("dap").step_out()
+      end,
+      desc = "Step Out",
     },
+  },
+  opts = function()
+    local dap = require("dap")
+    dap.adapters.chrome = {
+      type = "executable",
+      command = "node",
+      args = { os.getenv("HOME") .. "/.config/nvim/dap-adaptors/vscode-chrome-debug/out/src/chromeDebug.js" },
+    }
+  end,
 }
