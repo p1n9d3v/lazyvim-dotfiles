@@ -1,0 +1,13 @@
+% nix
+
+# update nix pkgs
+darwin-rebuild switch --flake $HOME/dotfiles/.config/nix#$USER
+
+
+% dotfiles
+
+# adopt stow
+cd $HOME/dotfiles && stow . --adopt && cd -
+
+
+
