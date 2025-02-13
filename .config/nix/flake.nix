@@ -35,6 +35,8 @@
           pkgs.bat
           pkgs.rip2
           pkgs.navi
+          pkgs.nodejs_22
+          pkgs.pngpaste
         ];
 
       # Homebrew

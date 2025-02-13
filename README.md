@@ -18,8 +18,8 @@
 
 - [Nix](https://nixos.org/nix/) : A powerful package manager for Linux and other Unix systems that enables reproducible builds and declarative configuration.
 
-  - [MyNixOS](https://mynixos.com/) : A web platform that provides a curated collection of Nix configurations and packages, allowing users to discover and share Nix configurations easily.
-  - [Nix Packages](https://search.nixos.org/packages) : A search engine for Nix packages
+    - [MyNixOS](https://mynixos.com/) : A web platform that provides a curated collection of Nix configurations and packages, allowing users to discover and share Nix configurations easily.
+    - [Nix Packages](https://search.nixos.org/packages) : A search engine for Nix packages
 
 - [Nix-Darwin](https://github.com/LnL7/nix-darwin) : A Nix-based configuration management system for macOS, allowing users to manage their system configuration declaratively.
 - [Flake](https://nixos.wiki/wiki/Flakes) : A new way to manage Nix packages and configurations, providing a more reproducible and composable approach to Nix expressions.
@@ -45,6 +45,7 @@
 - [bat](https://github.com/sharkdp/bat) : A cat clone with syntax highlighting and Git integration.
 - [rip2](https://github.com/MilesCranmer/rip2) : A tool for converting ripgrep results into a more user-friendly format.
 - [navi](https://github.com/denisidoro/navi) : An interactive cheatsheet tool for the command line.
+- [pngpaste](https://github.com/jcsalterego/pngpaste) : Paste PNG into files on MacOS, much like pbpaste does for text.
 
 ## Editor
 

@@ -10,4 +10,9 @@ darwin-rebuild switch --flake $HOME/dotfiles/.config/nix#$USER
 cd $HOME/dotfiles && stow . --adopt && cd -
 
 
+% ollama
+
+# run llama3.2 inline
+ollama run llama3.2 "<text>"
+
 

@@ -45,10 +45,10 @@ keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Move Line
-keymap.set("n", "<C-a>", "^", opts)
+keymap.set("n", "<C-b>", "^", opts)
 keymap.set("n", "<C-e>", "$", opts)
 
-keymap.set("v", "<C-a>", "^", opts)
+keymap.set("v", "<C-b>", "^", opts)
 keymap.set("v", "<C-e>", "$", opts)
 
 -- Visual Line

@@ -199,6 +199,10 @@ hs.hotkey.bind({ "alt" }, "B", function()
 	focusApp("Arc")
 end)
 
+hs.hotkey.bind({ "alt" }, "O", function()
+	focusApp("Obsidian")
+end)
+
 local reloadConfig = function(files)
 	local doReload = false
 	for _, file in pairs(files) do

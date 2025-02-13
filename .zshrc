@@ -51,6 +51,9 @@ alias tree='eza --tree $eza_params'
 alias fzf="fzf --style full \
     --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 alias n=navi
+alias rm=rip
+alias ol=ollama
+alias tl=tldr
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
