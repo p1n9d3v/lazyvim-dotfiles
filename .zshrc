@@ -32,8 +32,28 @@ zinit cdreplay -q
 
 export PATH=/opt/homebrew/bin:$PATH
 
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
+bindkey '^J' down-line-or-history
+bindkey '^K' up-line-or-history
+bindkey '^H' backward-char
+bindkey '^L' forward-char
+# ctrl + h
+bindkey "^[[104;5u" beginning-of-line
+# ctrl + l
+bindkey "^[[108;5u" end-of-line
+bindkey "^E" forward-word
+bindkey "^B" backward-word
+bindkey "^K" kill-whole-line
+# ctrl+ shift + w
+bindkey "^[[119;6u" backward-kill-line
+
+
+bindkey -s '^O' 'cd ..^M'
+# ^M or ^I
+bindkey -s ';5u' 'cd -^M'
+
+
 # select all line
 # bindkey '^[[1;10C' select-line
 

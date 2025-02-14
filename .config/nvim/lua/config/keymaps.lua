@@ -46,10 +46,9 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Move Line
 keymap.set("n", "<C-b>", "^", opts)
+keymap.set("n", "<C-h>", "^", opts)
 keymap.set("n", "<C-e>", "$", opts)
-
-keymap.set("v", "<C-b>", "^", opts)
-keymap.set("v", "<C-e>", "$", opts)
+keymap.set("n", "<C-l>", "$", opts)
 
 -- Visual Line
 keymap.set("n", "<S-l>", "vg_", opts)
@@ -77,5 +76,7 @@ keymap.set("n", "<C-j>", "<Plug>(VM-Add-Cursor-Down)", opts)
 keymap.set("n", "<C-k>", "<Plug>(VM-Add-Cursor-Up)", opts)
 
 -- cmdline
-keymap.set("c", "<C-j>", 'pumvisible() ? "<C-n>" : "<C-j>"', { expr = true, noremap = true })
-keymap.set("c", "<C-k>", 'pumvisible() ? "<C-p>" : "<C-k>"', { expr = true, noremap = true })
+-- keymap.set("c", "<C-j>", 'pumvisible() ? "<c-n>" : "<C-j>"', { expr = true, noremap = true })
+-- keymap.set("c", "<C-k>", 'pumvisible() ? "<c-p>" : "<C-k>"', { expr = true, noremap = true })
+keymap.set("c", "<C-e>", "<C-c>", opts)
+keymap.set("c", "<Tab>", "", opts) -- remove tab in cmdline

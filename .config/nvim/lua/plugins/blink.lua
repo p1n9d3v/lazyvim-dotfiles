@@ -18,11 +18,20 @@ return {
         opts = {
             signature = { enabled = true, window = { border = "single" } },
             keymap = {
-                ["<CR>"] = { "select_and_accept", "fallback" },
+                preset = "super-tab",
+                ["<CR>"] = { "accept", "fallback" },
+                ["<C-j>"] = { "select_next", "fallback" },
+                ["<C-k>"] = { "select_prev", "fallback" },
             },
             completion = {
                 menu = { border = "single" },
                 documentation = { window = { border = "single" } },
+                list = {
+                    selection = {
+                        preselect = false,
+                        auto_insert = false,
+                    },
+                },
             },
             sources = {
                 compat = {
@@ -32,6 +41,9 @@ return {
                     "obsidian",
                     "obsidian_new",
                     "obsidian_tags",
+                },
+                cmdline = {
+                    "cmdline",
                 },
                 providers = {
                     obsidian = {

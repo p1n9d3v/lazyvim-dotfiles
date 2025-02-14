@@ -5,14 +5,14 @@ return {
         opts = {
             colors = {
                 light_grey = "require('onedarkpro.helpers').darken('white', 50, 'onedark_dark')",
-                dark_red = "require('onedarkpro.helpers').darken('purple', 58, 'onedark')",
+                dark_purple = "require('onedarkpro.helpers').darken('purple', 58, 'onedark')",
             },
             highlights = {
                 PmenuSel = {
                     bg = "${light_grey}",
                 },
                 CursorLine = {
-                    bg = "${dark_red}",
+                    bg = "${dark_purple}",
                 },
                 NeoTreeGitUntracked = {
                     fg = "#ef596f",
