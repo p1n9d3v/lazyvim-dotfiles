@@ -50,7 +50,7 @@
           "appcleaner"
           "devtoys"
           "ollama"
-          "zen-browser"
+          "google-chrome"
           # "obsidian"
           # "raycast"
         ];
@@ -89,12 +89,12 @@
           "/Applications/Obsidian.app"
           "/Applications/Ghostty.app"
           "/Applications/Arc.app"
+          "/Applications/Google Chrome.app"
           "/Applications/Espanso.app"
           "/Applications/Raycast.app"
           "/Applications/DevToys.app"
           "/Applications/Ollama.app"
           "/Applications/AppCleaner.app"
-          "/Applications/Zen Browser.app"
         ];
       };
 
