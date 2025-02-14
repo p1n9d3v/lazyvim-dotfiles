@@ -8,33 +8,35 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # # Simple text replacement
-  # - trigger: ":espanso"
-  #   replace: "Hi there!"
+    # # Simple text replacement
+    # - trigger: ":espanso"
+    #   replace: "Hi there!"
 
-  # # Print the output of a shell command
-  # - trigger: ":shell"
-  #   replace: "{{output}}"
-  #   vars:
-  #     - name: output
-  #       type: shell
-  #       params:
-  #         cmd: "echo 'Hello from your shell'"
+    # # Print the output of a shell command
+    # - trigger: ":shell"
+    #   replace: "{{output}}"
+    #   vars:
+    #     - name: output
+    #       type: shell
+    #       params:
+    #         cmd: "echo 'Hello from your shell'"
 
-  - trigger: ":date"
-    replace: "{{date}}"
-    vars:
-      - name: date
-        type: date
-        params:
-          format: "%Y/%m/%d"
+    - trigger: ':date'
+      replace: '{{date}}'
+      vars:
+          - name: date
+            type: date
+            params:
+                format: '%Y/%m/%d'
 
-  - trigger: ":lorem"
-    replace: "Lorem Ipsum is simply dummy text of | the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    - trigger: ':lorem'
+      replace: "Lorem Ipsum is simply dummy text of | the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
-  - trigger: ":pgmail"
-    replace: "p1n9m4i1@gmail.com"
-  - trigger: ":bgmail"
-    replace: "blockp1n9@gmail.com"
-  - trigger: ":jgmail"
-    replace: "joon951019@gmail.com"
+    - trigger: ':goo'
+      replace: 'https://www.google.com/search?q='
+
+    - trigger: ':you'
+      replace: 'https://www.youtube.com'
+
+    - trigger: ':blog'
+      replace: 'https://blog.p1n9d3v.com'
