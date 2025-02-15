@@ -32,6 +32,10 @@ return {
                         auto_insert = false,
                     },
                 },
+                ghost_text = {
+                    enabled = true,
+                    show_without_selection = true,
+                },
             },
             sources = {
                 compat = {
@@ -43,7 +47,8 @@ return {
                     "obsidian_tags",
                 },
                 cmdline = {
-                    "cmdline",
+                    -- "cmdline",
+                    -- "lsp",
                 },
                 providers = {
                     obsidian = {
